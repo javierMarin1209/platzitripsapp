@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'description_place.dart';
-
+import 'review_list.dart';
+import 'header_appbar.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -34,10 +35,23 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hola Mundo Feliz"),
-        ),
-        body: new DescriptionPlace("Bahamas",4,desc),
+
+        body:/* Column(
+          children: <Widget>[
+            new DescriptionPlace("Bahamas",4,desc),
+            new ReviewList(),
+          ],
+        ),*/Stack(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                new DescriptionPlace("Bahamas",4,desc),
+                new ReviewList()
+              ],
+            ),
+            HeaderAppBar(),
+          ],
+        )
       )//MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
