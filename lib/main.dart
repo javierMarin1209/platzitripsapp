@@ -1,20 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'description_place.dart';
-import 'review_list.dart';
-import 'header_appbar.dart';
+import 'platzi_trips_cupertino.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  String desc="The journey itself is a amazing experience. You have to cross "
-      "many beautiful creeks and Streams along the way. And there several of other "
-      "little but beautiful waterfalls you would meet on the sides of the trail. "
-      "Dumbara Ella is the biggest and most beautiful waterfall among those. "
-      "It has some unique beauty you can’t find in anywhere else in Sri Lanka. "
-      "One could keep looking at the flow less curtain of Dumbara Ella forever I guess. "
-      "\n\n"
-      "If you are going on a two night trip this would be the best stop for your first night.";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,25 +24,8 @@ class MyApp extends StatelessWidget {
           color: Color.fromRGBO(0, 0, 0, 70)
         ),
       ),
-      home: Scaffold(
-
-        body:/* Column(
-          children: <Widget>[
-            new DescriptionPlace("Bahamas",4,desc),
-            new ReviewList(),
-          ],
-        ),*/Stack(
-          children: <Widget>[
-            ListView(
-              children: <Widget>[
-                new DescriptionPlace("Bahamas",4,desc),
-                new ReviewList()
-              ],
-            ),
-            HeaderAppBar(),
-          ],
-        )
-      )//MyHomePage(title: 'Flutter Demo Home Page'),
+      home: PlatziTripsCupertino()
+      //MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
